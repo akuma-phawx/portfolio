@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: local('Comfortaa'),
+    url(./assets/fonts/comfortaa/Comfortaa-Bold.ttf) format('ttf');
+}
+
+@tailwind utilities;
