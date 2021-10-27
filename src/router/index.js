@@ -4,6 +4,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    meta: { title: 'Home' },
     component: function () {
       return import('../views/Home.vue');
     },
@@ -11,7 +12,7 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-
+    meta: { title: 'About' },
     component: function () {
       return import('../views/About.vue');
     },
@@ -19,6 +20,7 @@ const routes = [
   {
     path: '/skills',
     name: 'Skills',
+    meta: { title: 'Skills' },
 
     component: function () {
       return import('../views/Skills.vue');
@@ -27,6 +29,7 @@ const routes = [
   {
     path: '/work',
     name: 'Work',
+    meta: { title: 'My Work' },
 
     component: function () {
       return import('../views/Work.vue');
@@ -35,7 +38,7 @@ const routes = [
   {
     path: '/contact',
     name: 'contact',
-
+    meta: { title: 'Contact' },
     component: function () {
       return import('../views/Contact.vue');
     },
