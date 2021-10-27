@@ -4,7 +4,7 @@ a:before {
   transition: all 0.5s;
 }
 a:hover {
-  color: #555;
+  color: #d1b000;
 }
 
 /* stroke */
@@ -21,7 +21,7 @@ a:after {
   content: '.';
   color: transparent;
   background: #aaa;
-  height: 1px;
+  height: 2px;
 }
 a:hover:after {
   width: 100%;

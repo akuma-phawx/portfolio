@@ -10,6 +10,6 @@
   }
 
   .mobile-nav-link {
-    @apply flex space-x-2 py-4 px-3 border-0 transition duration-500;
+    @apply border-0 transition duration-500;
   }
 }

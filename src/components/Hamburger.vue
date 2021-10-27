@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:hidden flex items-center">
+  <div class="flex items-center">
     <button
       class="mobile-menu-toggler hamburger hamburger--collapse pb-0 pt-0"
       :class="{ 'is-active': $store.getters.getMenuState }"
