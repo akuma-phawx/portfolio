@@ -9,6 +9,7 @@ module.exports = {
       sm: '640px',
       afterSmall: '705px',
       md: '768px',
+      afterMd: '948px',
       lg: '1024px',
       afterLarge: '1124px',
       xl: '1280px',
@@ -285,6 +286,9 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      cinzel: ['cinzel'],
+      comfortaa: ['comfortaa'],
+      shenttpuro: ['shenttpuro'],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

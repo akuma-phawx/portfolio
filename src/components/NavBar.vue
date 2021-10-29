@@ -1,10 +1,10 @@
 <template>
   <div id="nav" class="flex justify-between mb-12 pt-6 pb-6">
     <div class="left-section flex">
-      <div class="title_container text-center ml-3 mr-8 text-xl">
-        <p class="text-2xl ml-4">yōkoso</p>
+      <div class="title_container text-center flex ml-3 mr-8 text-xl">
+        <p class="text-2xl font-cinzel ml-4">Akuma-Phawx</p>
       </div>
-      <div class="link_container hidden md:block">
+      <div class="link_container hidden afterMd:block">
         <router-link class="nav-link" to="/">Home</router-link>
         <router-link class="nav-link" to="/about">About</router-link>
         <router-link class="nav-link" to="/skills">Skills</router-link>
@@ -14,7 +14,7 @@
     </div>
     <div class="right-section flex flex-grow justify-end">
       <!-- Links -->
-      <div class="social-links md:flex hidden md:block">
+      <div class="social-links afterMd:flex hidden afterMd:block">
         <a href="https://github.com/akuma-phawx" class="mr-3">
           <img src="../../public/svgs/github-brand.svg" alt="" />
         </a>
@@ -28,17 +28,20 @@
           <img src="../../public/svgs/instagram-brand.svg" alt="" />
         </a>
       </div>
-      <Hamburger class="md:hidden" />
+      <Hamburger class="afterMd:hidden" />
     </div>
   </div>
+  <MobileNavBar />
 </template>
 
 <script>
 import Hamburger from './Hamburger.vue';
+import MobileNavBar from './MobileNavBar.vue';
 export default {
   name: 'Navbar',
   components: {
     Hamburger,
+    MobileNavBar,
   },
 };
 </script>
