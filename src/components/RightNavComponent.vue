@@ -1,6 +1,6 @@
 <template>
   <div class="right-section flex flex-grow justify-end">
-    <div class="social-links afterMd:flex hidden afterMd:block">
+    <div class="social-links sm:flex hidden sm:block">
       <a href="https://github.com/akuma-phawx" class="mr-3">
         <img src="../../public/svgs/github-brand.svg" alt="" />
       </a>
@@ -14,7 +14,7 @@
         <img src="../../public/svgs/instagram-brand.svg" alt="" />
       </a>
     </div>
-    <Hamburger class="afterMd:hidden" />
+    <Hamburger class="sm:hidden" />
   </div>
 </template>
 

@@ -10,14 +10,10 @@
   font-family: comfortaa;
   src: url('./assets/fonts/comfortaa/Comfortaa-Light.ttf');
 }
-@font-face {
-  font-family: shenttpuro;
-  src: url('./assets/fonts/shenttpuro/Shenttpuro_Font.ttf');
-}
 
 @layer components {
   .nav-link {
-    @apply text-xl mr-5 font-comfortaa border-b-4 border-transparent    
+    @apply text-xl mr-5  font-comfortaa border-b-4 border-transparent    
           transition
           duration-500;
   }

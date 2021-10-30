@@ -1,5 +1,5 @@
 <template>
-  <div id="nav" class="flex justify-between mb-12 pt-6 pb-6">
+  <div id="nav" class="flex justify-between mb-12 pt-6 pb-6 shadow-lg">
     <LeftNavComponent />
 
     <RightNavComponent />
@@ -22,4 +22,4 @@ export default {
 };
 </script>
 
-<style scoped src="@/assets/css/navlink.css"></style>
+<style></style>

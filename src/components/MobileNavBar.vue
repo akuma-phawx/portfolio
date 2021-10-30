@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mobile-menu text-center afterMd:hidden"
+    class="mobile-menu text-center sm:hidden"
     :class="{ hidden: !$store.getters.getMenuState }"
   >
     <p>test</p>

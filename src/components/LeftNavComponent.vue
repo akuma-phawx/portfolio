@@ -1,9 +1,6 @@
 <template>
   <div class="left-section flex">
-    <div class="title_container text-center flex ml-3 mr-8 text-xl">
-      <p class="text-2xl font-cinzel ml-4">Akuma-Phawx</p>
-    </div>
-    <div class="link_container hidden afterMd:block">
+    <div class="link_container hidden sm:block ml-8 mt-1">
       <router-link class="nav-link" to="/">Home</router-link>
       <router-link class="nav-link" to="/about">About</router-link>
       <router-link class="nav-link" to="/skills">Skills</router-link>
@@ -17,4 +14,4 @@
 export default {};
 </script>
 
-<style></style>
+<style scoped src="@/assets/css/navlink.css"></style>

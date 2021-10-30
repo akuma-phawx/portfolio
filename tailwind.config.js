@@ -288,7 +288,6 @@ module.exports = {
       ],
       cinzel: ['cinzel'],
       comfortaa: ['comfortaa'],
-      shenttpuro: ['shenttpuro'],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
