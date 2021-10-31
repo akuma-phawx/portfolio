@@ -35,6 +35,8 @@
           w-max
           mt-8
           mx-auto
+          transition
+          duration-300
         "
       >
         Here's my work
