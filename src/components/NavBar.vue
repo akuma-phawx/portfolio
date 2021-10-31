@@ -1,5 +1,9 @@
 <template>
-  <div id="nav" class="flex justify-between mb-12 pt-6 pb-6 shadow-lg">
+  <div
+    id="nav"
+    class="flex justify-between mb-12 pt-6 pb-6"
+    :class="{ 'shadow-lg': !$store.getters.getMenuState }"
+  >
     <LeftNavComponent />
 
     <RightNavComponent />
