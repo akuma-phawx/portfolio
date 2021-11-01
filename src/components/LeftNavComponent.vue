@@ -1,11 +1,12 @@
 <template>
   <div class="left-section flex">
     <div class="logo-section sm:hidden">
-      <img
-        src="../../public/psyduck.png"
-        class="object-contain h-8 ml-6"
-        alt=""
-      />
+      <router-link to="/">
+        <img
+          src="../../public/psyduck.png"
+          class="object-contain h-8 ml-6 animate-bounce"
+          alt=""
+      /></router-link>
     </div>
     <div class="link_container hidden sm:block ml-8 mt-1">
       <router-link class="nav-link" to="/">Home</router-link>
