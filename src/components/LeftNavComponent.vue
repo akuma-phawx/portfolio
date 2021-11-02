@@ -3,8 +3,8 @@
     <div class="logo-section sm:hidden">
       <router-link to="/">
         <img
-          src="../../public/psyduck.png"
-          class="object-contain h-8 ml-6 animate-bounce"
+          src="../../public/favicon-32x32.png"
+          class="object-contain h-8 ml-6"
           alt=""
       /></router-link>
     </div>

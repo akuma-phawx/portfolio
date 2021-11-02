@@ -32,12 +32,11 @@
           bg-transparent
           border border-black
           text-black
-          hover:bg-black hover:text-white
+          hover:bg-gray-200
           text-center text-xl
           sm:text-2xl
           py-2
           px-4
-          rounded
           w-max
           mt-8
           mx-auto
@@ -45,7 +44,7 @@
           duration-300
         "
       >
-        Here's my work
+        Here's my work &#8594;
       </a>
     </div>
   </div>

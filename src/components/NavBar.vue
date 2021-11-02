@@ -1,15 +1,11 @@
 <template>
-  <div
-    id="nav"
-    class="flex justify-between mb-12 pt-6 pb-6"
-    :class="{ 'shadow-lg': !$store.getters.getMenuState }"
-  >
+  <div id="nav" class="flex justify-between mb-12 pt-6 pb-6">
     <LeftNavComponent />
 
     <RightNavComponent />
     <!-- Links -->
   </div>
-  <MobileNavBar />
+  <MobileNavBar class="mob-men" />
 </template>
 
 <script>
@@ -26,4 +22,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.mob-men {
+  position: absolute;
+  background: white;
+  z-index: 1000;
+  width: 100%;
+}
+</style>
