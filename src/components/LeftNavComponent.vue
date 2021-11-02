@@ -1,6 +1,6 @@
 <template>
   <div class="left-section flex">
-    <div class="logo-section sm:hidden">
+    <div class="logo-section sm:hidden hover:animate-bounce">
       <router-link to="/">
         <img
           src="../../public/favicon-32x32.png"
