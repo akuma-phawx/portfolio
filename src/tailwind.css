@@ -25,6 +25,22 @@
     .text-shadow-none {
       text-shadow: none;
     }
+
+    .shadowCssCore {
+      color: hsla(0, 0%, 0%, 0);
+      perspective: 80px;
+      outline: none;
+    }
+
+    .shadowCss,
+    .shadowCss-sm,
+    .shadowCss-md,
+    .shadowCss-lg {
+      display: inline-block;
+      text-shadow: rgb(150, 147, 147) 0 0 1px, #fff 0 -1px 2px, #fff 0 -3px 2px,
+        rgba(0, 0, 0, 0.8) 0 30px 25px;
+      transition: margin-left 0.3s cubic-bezier(0, 1, 0, 1);
+    }
   }
 }
 @layer components {
@@ -42,6 +58,13 @@
     @apply font-comfortaa text-center;
   }
 
+  .mob-menu {
+    position: absolute;
+    background: white;
+    z-index: 1000;
+    width: 100%;
+  }
+
   .blink {
     animation: blink-animation 2s steps(5, start) infinite;
     -webkit-animation: blink-animation 2s steps(5, start) infinite;
@@ -55,5 +78,60 @@
     to {
       visibility: hidden;
     }
+  }
+
+  .animatedButton {
+    width: 230px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.4), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+
+  .animatedButtonStyle span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .animatedButtonStyle:before {
+    height: 0%;
+    width: 2px;
+  }
+  .animatedButtonStyle:after {
+    width: 0%;
+    height: 2px;
+  }
+
+  .animatedButtonStyle:hover:before {
+    height: 100%;
+  }
+  .animatedButtonStyle:hover:after {
+    width: 100%;
+  }
+
+  .animatedButtonStyle span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .animatedButtonStyle span:after {
+    height: 2px;
+    width: 0%;
+  }
+  .animatedButtonStyle span:hover:before {
+    height: 100%;
+  }
+  .animatedButtonStyle span:hover:after {
+    width: 100%;
   }
 }

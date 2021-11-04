@@ -5,7 +5,7 @@
     <RightNavComponent />
     <!-- Links -->
   </div>
-  <MobileNavBar class="mob-men" />
+  <MobileNavBar class="mob-menu" />
 </template>
 
 <script>
@@ -22,11 +22,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.mob-men {
-  position: absolute;
-  background: white;
-  z-index: 1000;
-  width: 100%;
-}
-</style>
+<style scoped></style>

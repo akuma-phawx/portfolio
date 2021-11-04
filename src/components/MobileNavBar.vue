@@ -38,7 +38,7 @@
       <a
         href="https://www.instagram.com/chris.vrd_sw/"
         target="_blank"
-        class="mr-3 mb-3"
+        class="mb-3"
       >
         <img src="../../public/svgs/instagram-brand.svg" alt="" />
       </a>
