@@ -22,6 +22,8 @@
         w-full
         lg:w-max
       "
+      ref="form"
+      @submit.prevent="sendEmail"
     >
       <!-- Intro -->
       <div class="py-4">
@@ -36,19 +38,35 @@
       <!-- Name -->
       <div class="mt-16 flex items-center">
         <label for="fullName" class="mr-4 w-1/3">Full Name</label>
-        <input id="fullName" type="text" class="border shadow-md p-2 w-2/3" />
+        <input
+          id="fullName"
+          name="fullName"
+          v-model="fullName"
+          placeholder="Your Name.."
+          type="text"
+          class="border shadow-md p-2 w-2/3"
+        />
       </div>
       <!-- Email -->
       <div class="mt-4 flex items-center">
         <label for="email" class="mr-4 w-1/3">Email</label>
-        <input id="email" type="email" class="border shadow-md p-2 w-2/3" />
+        <input
+          id="email"
+          name="email"
+          v-model="email"
+          placeholder="Your Email.."
+          type="email"
+          class="border shadow-md p-2 w-2/3"
+        />
       </div>
       <!-- Message -->
       <div class="mt-4 flex items-center">
-        <label for="message" class="mr-4 w-1/3">Message</label>
+        <label for="message" class="mr-4 w-1/3">Message {{ message }}</label>
         <textarea
           name="message"
           id="message"
+          v-model="message"
+          placeholder="Your Message.."
           class="border shadow-md p-1 w-2/3"
           rows="8"
         ></textarea>
@@ -56,7 +74,10 @@
       <!-- Button -->
       <!-- Button -->
       <div class="mt-6">
-        <a class="animatedButton animatedButtonStyle text-center" href="#"
+        <a
+          class="animatedButton animatedButtonStyle text-center"
+          @click="sendEmail"
+          href="#"
           ><span>Send</span></a
         >
       </div>
@@ -65,8 +86,28 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
 export default {
   name: 'Contact',
+  data() {
+    return {
+      fullName: '',
+      email: '',
+      message: '',
+    };
+  },
+  methods: {
+    sendEmail() {
+      emailjs.sendForm('serv', 'temp', this.$refs.form, 'user').then(
+        (result) => {
+          console.log('SUCCESS!', result.text);
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
+    },
+  },
 };
 </script>
 
