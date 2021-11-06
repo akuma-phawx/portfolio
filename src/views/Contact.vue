@@ -44,7 +44,16 @@
           v-model="fullName"
           placeholder="Your Name.."
           type="text"
-          class="border shadow-md p-2 w-2/3"
+          class="
+            appearance-none
+            border
+            rounded
+            outline-none
+            shadow-md
+            p-2
+            w-2/3
+            focus:ring-1 focus:ring-blue-500
+          "
         />
       </div>
       <!-- Email -->
@@ -56,18 +65,36 @@
           v-model="email"
           placeholder="Your Email.."
           type="email"
-          class="border shadow-md p-2 w-2/3"
+          class="
+            appearance-none
+            border
+            rounded
+            outline-none
+            shadow-md
+            p-2
+            w-2/3
+            focus:ring-1 focus:ring-blue-500
+          "
         />
       </div>
       <!-- Message -->
       <div class="mt-4 flex items-center">
-        <label for="message" class="mr-4 w-1/3">Message {{ message }}</label>
+        <label for="message" class="mr-4 w-1/3">Message</label>
         <textarea
           name="message"
           id="message"
           v-model="message"
           placeholder="Your Message.."
-          class="border shadow-md p-1 w-2/3"
+          class="
+            appearance-none
+            border
+            rounded
+            outline-none
+            shadow-md
+            p-2
+            w-2/3
+            focus:ring-1 focus:ring-blue-500
+          "
           rows="8"
         ></textarea>
       </div>
@@ -98,14 +125,21 @@ export default {
   },
   methods: {
     sendEmail() {
-      emailjs.sendForm('serv', 'temp', this.$refs.form, 'user').then(
-        (result) => {
-          console.log('SUCCESS!', result.text);
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        }
-      );
+      emailjs
+        .sendForm(
+          process.env.VUE_APP_SERVICE_ID,
+          process.env.VUE_APP_TEMPLATE_ID,
+          this.$refs.form,
+          process.env.VUE_APP_USER_ID
+        )
+        .then(
+          (result) => {
+            console.log('SUCCESS!', result.text);
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          }
+        );
     },
   },
 };
