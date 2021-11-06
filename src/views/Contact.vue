@@ -54,6 +54,7 @@
             w-2/3
             focus:ring-1 focus:ring-blue-500
           "
+          required
         />
       </div>
       <!-- Email -->
@@ -75,6 +76,7 @@
             w-2/3
             focus:ring-1 focus:ring-blue-500
           "
+          required
         />
       </div>
       <!-- Message -->
@@ -96,17 +98,17 @@
             focus:ring-1 focus:ring-blue-500
           "
           rows="8"
+          required
         ></textarea>
       </div>
       <!-- Button -->
-      <!-- Button -->
       <div class="mt-6">
-        <a
+        <button
           class="animatedButton animatedButtonStyle text-center"
-          @click="sendEmail"
-          href="#"
-          ><span>Send</span></a
+          type="submit"
         >
+          <span>Send</span>
+        </button>
       </div>
     </form>
   </div>
@@ -141,6 +143,7 @@ export default {
           }
         );
     },
+    cleanInputs() {},
   },
 };
 </script>
