@@ -29,7 +29,7 @@
       <div class="py-4">
         <p class="font-bold text-4xl">Get in Touch</p>
         <p class="mt-4 text-sm text-blue-500 font-bold flex flex-col">
-          <span> Would you like to work together or ask my something? </span>
+          <span> Would you like to work together or ask me something? </span>
           <span>
             Send me a message and I will get back to you as soon as possible.
           </span>
@@ -37,7 +37,7 @@
       </div>
       <!-- Name -->
       <div class="mt-16 flex items-center">
-        <label for="fullName" class="mr-4 w-1/3">Full Name</label>
+        <label for="fullName" class="mr-4 w-1/3">Name</label>
         <input
           id="fullName"
           name="fullName"
@@ -46,6 +46,8 @@
           type="text"
           class="inputStyle"
           required
+          oninvalid="this.setCustomValidity('Name can not be left blank.')"
+          oninput="this.setCustomValidity('')"
         />
       </div>
       <!-- Email -->
@@ -58,6 +60,8 @@
           placeholder="Your Email.."
           type="email"
           class="inputStyle"
+          oninvalid="this.setCustomValidity('Invalid Email Address.')"
+          oninput="this.setCustomValidity('')"
           required
         />
       </div>
@@ -71,19 +75,26 @@
           placeholder="Your Message.."
           class="inputStyle"
           rows="8"
+          oninvalid="this.setCustomValidity('Minimum message length is 15 characters.')"
+          oninput="this.setCustomValidity('')"
+          minlength="15"
           required
         ></textarea>
       </div>
       <!-- Button -->
-      <div class="mt-6">
+      <div class="my-7 flex flex-col items-center">
         <button
+          v-if="!isSending"
           class="animatedButton animatedButtonStyle text-center"
           type="submit"
         >
           <span>Send</span>
         </button>
+
+        <div v-else class="loadingSpinner my-6"></div>
       </div>
     </form>
+    <!-- Loading Spinner -->
   </div>
 </template>
 
@@ -96,10 +107,12 @@ export default {
       fullName: '',
       email: '',
       message: '',
+      isSending: false,
     };
   },
   methods: {
     sendEmail() {
+      this.isSending = true;
       emailjs
         .sendForm(
           process.env.VUE_APP_SERVICE_ID,
@@ -108,15 +121,18 @@ export default {
           process.env.VUE_APP_USER_ID
         )
         .then(
-          (result) => {
-            console.log('SUCCESS!', result.text);
+          () => {
+            this.isSending = false;
+            this.cleanInputs();
           },
           (error) => {
             console.log('FAILED...', error.text);
           }
         );
     },
-    cleanInputs() {},
+    cleanInputs() {
+      this.message = this.fullName = this.email = '';
+    },
   },
 };
 </script>
@@ -163,5 +179,32 @@ export default {
     -4px -4px 5px 0px rgba(255, 255, 255, 0.9),
     7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+}
+
+@keyframes load7 {
+  100% {
+    transform: rotatez(360deg);
+  }
+}
+
+.loadingSpinner {
+  width: 100px;
+  height: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner::before {
+  content: '';
+  color: white;
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  border-radius: 50%;
+  border: 10px solid blue;
+  border-color: #2ea4e9 #2ea4e9 #2ea4e9 #76e6f5;
+  animation: load7 0.6s infinite ease-in-out;
+  box-shadow: 0px 0px 40px -2px skyblue;
 }
 </style>

@@ -145,4 +145,13 @@
             w-2/3
             focus:ring-1 focus:ring-blue-500;
   }
+
+  .homePageSpanStyle {
+    @apply text-shadow
+              md:text-shadow-md
+              lg:text-shadow-lg
+              shadowCss
+              md:shadowCss
+              lg:shadowCss;
+  }
 }

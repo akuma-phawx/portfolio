@@ -8,29 +8,10 @@
       <h1 class="home-intro text-3xl md:text-5xl lg:text-7xl shadowCssCore">
         <div class="upper-text">
           <span class="font-black shadowCss">&lt;</span>
-          <span
-            class="
-              text-shadow
-              md:text-shadow-md
-              lg:text-shadow-lg
-              shadowCss
-              md:shadowCss
-              lg:shadowCss
-            "
-          >
-            Hi, I'm Christopher Vradis</span
-          >
+          <span class="homePageSpanStyle"> Hi, I'm Christopher Vradis</span>
         </div>
         <div class="lower-text mt-4">
-          <span
-            class="
-              text-shadow
-              md:text-shadow-md
-              lg:text-shadow-lg
-              shadowCss
-              md:shadowCss
-              lg:shadowCss
-            "
+          <span class="homePageSpanStyle"
             >Full Stack Developer from Greece
           </span>
           <span class="font-black blink shadowCss">/</span>
