@@ -134,4 +134,15 @@
   .animatedButtonStyle span:hover:after {
     width: 100%;
   }
+
+  .inputStyle {
+    @apply appearance-none
+            border
+            rounded
+            outline-none
+            shadow-md
+            p-2
+            w-2/3
+            focus:ring-1 focus:ring-blue-500;
+  }
 }

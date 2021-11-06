@@ -44,16 +44,7 @@
           v-model="fullName"
           placeholder="Your Name.."
           type="text"
-          class="
-            appearance-none
-            border
-            rounded
-            outline-none
-            shadow-md
-            p-2
-            w-2/3
-            focus:ring-1 focus:ring-blue-500
-          "
+          class="inputStyle"
           required
         />
       </div>
@@ -66,16 +57,7 @@
           v-model="email"
           placeholder="Your Email.."
           type="email"
-          class="
-            appearance-none
-            border
-            rounded
-            outline-none
-            shadow-md
-            p-2
-            w-2/3
-            focus:ring-1 focus:ring-blue-500
-          "
+          class="inputStyle"
           required
         />
       </div>
@@ -87,16 +69,7 @@
           id="message"
           v-model="message"
           placeholder="Your Message.."
-          class="
-            appearance-none
-            border
-            rounded
-            outline-none
-            shadow-md
-            p-2
-            w-2/3
-            focus:ring-1 focus:ring-blue-500
-          "
+          class="inputStyle"
           rows="8"
           required
         ></textarea>
