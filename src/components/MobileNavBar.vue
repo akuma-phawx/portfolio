@@ -47,7 +47,15 @@
 </template>
 
 <script>
-export default {};
+// import LeftNavComponent from './LeftNavComponent.vue';
+// import RightNavComponent from './RightNavComponent.vue';
+export default {
+  name: 'MobileNavBar',
+  // components: {
+  //   LeftNavComponent,
+  //   RightNavComponent,
+  // },
+};
 </script>
 
 <style scoped src="@/assets/css/navlink.css"></style>

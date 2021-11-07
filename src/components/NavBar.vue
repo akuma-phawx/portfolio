@@ -1,11 +1,16 @@
 <template>
-  <div id="nav" class="flex justify-between mb-12 pt-6 pb-6">
-    <LeftNavComponent />
+  <div class="mt-20">
+    <div
+      id="nav"
+      class="nav-menu"
+      :class="{ 'border-b': !$store.getters.getMenuState }"
+    >
+      <LeftNavComponent />
 
-    <RightNavComponent />
-    <!-- Links -->
+      <RightNavComponent />
+    </div>
+    <MobileNavBar class="mob-menu" />
   </div>
-  <MobileNavBar class="mob-menu" />
 </template>
 
 <script>
