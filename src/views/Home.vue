@@ -1,10 +1,17 @@
 <template>
   <div
     id="home"
-    class="container flex flex-col justify-center max-w-full h-screen -mt-32"
+    class="
+      container
+      flex flex-col
+      justify-center
+      max-w-full
+      h-screen
+      sm:mt-none
+    "
   >
     <!-- Text -->
-    <div class="">
+    <div class="z-10">
       <h1 class="home-intro text-3xl md:text-5xl lg:text-7xl shadowCssCore">
         <div class="upper-text">
           <span class="font-black shadowCss">&lt;</span>

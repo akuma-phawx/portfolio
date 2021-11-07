@@ -8,6 +8,7 @@
       text-center
       items-center
       max-w-full
+      sm:mt-32
       font-comfortaa
     "
   >
@@ -46,7 +47,7 @@
           type="text"
           class="inputStyle"
           required
-          oninvalid="this.setCustomValidity('Name can not be left blank.')"
+          oninvalid="this.setCustomValidity('Please enter your name.')"
           oninput="this.setCustomValidity('')"
         />
       </div>

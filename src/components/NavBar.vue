@@ -9,7 +9,7 @@
 
       <RightNavComponent />
     </div>
-    <MobileNavBar class="mob-menu" />
+    <MobileNavBar class="mob-menu z-50" />
   </div>
 </template>
 

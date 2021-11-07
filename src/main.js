@@ -8,4 +8,5 @@ import store from './store';
 router.beforeEach(() => {
   store.dispatch('toggleMenu', false);
 });
+
 createApp(App).use(store).use(router).mount('#app');
