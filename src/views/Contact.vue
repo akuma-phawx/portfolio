@@ -1,4 +1,19 @@
 <template>
+  <!-- START OF OVERLAY -->
+  <div
+    class="
+      fixed
+      inset-0
+      bg-gray-600 bg-opacity-50
+      overflow-y-auto
+      h-full
+      w-full
+      z-30
+    "
+    v-bind:class="{ hidden: !this.$store.getters.getModalState }"
+    id="my-modal"
+  ></div>
+  <!-- END OF OVERLAY -->
   <div
     id="contact"
     class="
@@ -12,6 +27,12 @@
       font-comfortaa
     "
   >
+    <!-- START OF MODAL -->
+    <div class="absolute z-40">
+      <MessageModal v-if="this.$store.getters.getModalState" />
+    </div>
+    <!-- END OF MODAL -->
+    <!-- START OF FORM -->
     <form
       class="
         shadow-2xl
@@ -82,7 +103,7 @@
           required
         ></textarea>
       </div>
-      <!-- Button -->
+      <!-- START OF BUTTON -->
       <div class="my-7 flex flex-col items-center">
         <button
           v-if="!isSending"
@@ -91,31 +112,13 @@
         >
           <span>Send</span>
         </button>
-
+        <!-- END OF BUTTON -->
+        <!-- START OF SPINNER -->
         <div v-else class="loadingSpinner my-6"></div>
+        <!-- END OF SPINNER -->
       </div>
     </form>
-    <button
-      class="
-        bg-green-500
-        text-white
-        rounded-md
-        px-8
-        py-2
-        text-base
-        font-medium
-        hover:bg-green-600
-        focus:outline-none focus:ring-2 focus:ring-green-300
-      "
-      v-on:click="this.$store.dispatch('toggleModal', true)"
-      id="open-btn"
-    >
-      Open Modal
-    </button>
-
-    <MessageModal v-if="this.$store.getters.getModalState" />
-
-    <!-- Loading Spinner -->
+    <!-- END OF FORM -->
   </div>
 </template>
 
@@ -148,6 +151,7 @@ export default {
         .then(
           () => {
             this.isSending = false;
+            this.$store.dispatch('toggleModal', true);
             this.cleanInputs();
           },
           (error) => {
