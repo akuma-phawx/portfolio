@@ -95,14 +95,38 @@
         <div v-else class="loadingSpinner my-6"></div>
       </div>
     </form>
+    <button
+      class="
+        bg-green-500
+        text-white
+        rounded-md
+        px-8
+        py-2
+        text-base
+        font-medium
+        hover:bg-green-600
+        focus:outline-none focus:ring-2 focus:ring-green-300
+      "
+      v-on:click="this.$store.dispatch('toggleModal', true)"
+      id="open-btn"
+    >
+      Open Modal
+    </button>
+
+    <MessageModal v-if="this.$store.getters.getModalState" />
+
     <!-- Loading Spinner -->
   </div>
 </template>
 
 <script>
 import emailjs from 'emailjs-com';
+import MessageModal from '../components/MessageModal.vue';
 export default {
   name: 'Contact',
+  components: {
+    MessageModal,
+  },
   data() {
     return {
       fullName: '',

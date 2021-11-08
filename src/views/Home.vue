@@ -11,7 +11,7 @@
     "
   >
     <!-- Text -->
-    <div class="z-10">
+    <div class="z-10 mx-6">
       <h1 class="home-intro text-3xl md:text-5xl lg:text-7xl shadowCssCore">
         <div class="upper-text">
           <span class="font-black shadowCss">&lt;</span>
