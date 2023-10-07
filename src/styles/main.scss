@@ -1,0 +1,132 @@
+@import "bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+@import "bootstrap-icons/font/bootstrap-icons.css";
+body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Lato", sans-serif;
+}
+
+.halloween {
+  background: radial-gradient(ellipse at bottom, #240033 0%, #100016 100%);
+}
+
+.christmas {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.snow {
+  $total: 200;
+  position: absolute;
+  width: 20px; /* Adjust the width and height as needed for your pumpkin emoji */
+  height: 20px;
+  font-size: 20px; /* Set the font size to match the width and height */
+  filter: drop-shadow(0 0 10px white);
+  transition: opacity 0.3s ease-in-out;
+  @for $i from 1 through $total {
+    $random-x: random(1000000) * 0.0001vw;
+    $random-offset: random_range(-100000, 100000) * 0.0001vw;
+    $random-x-end: $random-x + $random-offset;
+    $random-x-end-yoyo: $random-x + ($random-offset / 2);
+    $random-yoyo-time: random_range(30000, 80000) / 100000;
+    $random-yoyo-y: $random-yoyo-time * 100vh;
+    $random-scale: random(10000) * 0.0001;
+    $fall-duration: random_range(10, 30) * 1s;
+    $fall-delay: random(30) * -1s;
+
+    &:nth-child(#{$i}) {
+      opacity: random(10000) * 0.0001;
+      transform: translate($random-x, -10px) scale($random-scale);
+      animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+    }
+
+    @keyframes fall-#{$i} {
+      #{percentage($random-yoyo-time)} {
+        transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
+      }
+
+      to {
+        transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+      }
+    }
+
+    &:nth-child(#{$i})::before {
+      content: "\2744"; /* Replace with the Unicode code for your pumpkin emoji */
+      color: rgb(255, 255, 255); /* Set the color to match the pumpkin color */
+      display: inline-block;
+    }
+  }
+}
+
+.pumpkin {
+  $total: 200;
+  position: absolute;
+  width: 20px; /* Adjust the width and height as needed for your pumpkin emoji */
+  height: 20px;
+  font-size: 20px; /* Set the font size to match the width and height */
+  filter: drop-shadow(0 0 10px white);
+  transition: opacity 0.3s ease-in-out;
+
+  @for $i from 1 through $total {
+    $random-x: random(1000000) * 0.0001vw;
+    $random-offset: random_range(-100000, 100000) * 0.0001vw;
+    $random-x-end: $random-x + $random-offset;
+    $random-x-end-yoyo: $random-x + ($random-offset / 2);
+    $random-yoyo-time: random_range(30000, 80000) / 100000;
+    $random-yoyo-y: $random-yoyo-time * 100vh;
+    $random-scale: random(10000) * 0.0001;
+    $fall-duration: random_range(10, 30) * 1s;
+    $fall-delay: random(30) * -1s;
+
+    &:nth-child(#{$i}) {
+      opacity: random(10000) * 0.0001;
+      transform: translate($random-x, -10px) scale($random-scale);
+      animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+    }
+
+    @keyframes fall-#{$i} {
+      #{percentage($random-yoyo-time)} {
+        transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
+      }
+
+      to {
+        transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+      }
+    }
+
+    &:nth-child(#{$i})::before {
+      content: "\1F383"; /* Replace with the Unicode code for your pumpkin emoji */
+      color: orange; /* Set the color to match the pumpkin color */
+      display: inline-block;
+    }
+  }
+}
+
+.instagram-gradient {
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+  -webkit-background-clip: text; /* Apply gradient as text color */
+  -webkit-text-fill-color: transparent; /* Make text transparent so the gradient shows through */
+}
+
+.linkedin-color {
+  color: #0072b1;
+}
+.grow-on-hover:hover {
+  /* Apply a scale transform on hover */
+  transform: scale(1.1); /* You can adjust the scale factor as needed */
+  transition: transform 0.3s ease; /* Add a smooth transition for the scaling effect */
+}
